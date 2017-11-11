@@ -90,6 +90,18 @@
 		0E68572C1FB66073008F4447 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					0,
+					1,
+					2,
+					3,
+					"4 ",
+					5,
+					6,
+					7,
+					8,
+					9,
+				);
 				LastSwiftUpdateCheck = 0900;
 				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "Wentao Song";

@@ -11,8 +11,11 @@ import UIKit
 class ConverterViewController: UIViewController {
 
     @IBOutlet weak var outputDisplay: UITextField!
+    @IBOutlet weak var BlueInput: UITextField!
     
     @IBOutlet weak var inputDisplay: UITextField!
+    @IBOutlet weak var WhiteInput: UITextField!
+    
     
     var numbers: String  = ""
     var choice: Int = 1
@@ -22,7 +25,7 @@ class ConverterViewController: UIViewController {
         outputDisplay.textAlignment = .right
         inputDisplay.textAlignment = .right
         
-        numbers = numbers + String(sender.tag-1)
+        numbers = numbers + String(sender.tag)
         inputDisplay.text = numbers
         print(numbers)
         
@@ -59,8 +62,8 @@ class ConverterViewController: UIViewController {
     @IBAction func convert(_ sender: AnyObject) {
         let alert = UIAlertController(title:"choose a converter",message:nil,preferredStyle:UIAlertControllerStyle.actionSheet)
         alert.addAction(UIAlertAction(title:"fahrenheit to celcius",style:UIAlertActionStyle.default,handler:{(alertAction) -> Void in
-            self.inputDisplay.text = "°F"
-            self.outputDisplay.text = "°C"
+            self.WhiteInput.text = "°F"
+            self.BlueInput.text = "°C"
             self.choice = 1
             self.inputDisplay.text = self.numbers
             if(self.numbers != ""){
@@ -69,8 +72,8 @@ class ConverterViewController: UIViewController {
         }))
         
         alert.addAction(UIAlertAction(title:"celcius to fahrenheit",style:UIAlertActionStyle.default,handler:{ (alertAction) -> Void in
-            self.inputDisplay.text = "°C"
-            self.outputDisplay.text = "°F"
+            self.WhiteInput.text = "°C"
+            self.BlueInput.text = "°F"
             self.choice = 2
             self.inputDisplay.text = self.numbers
             if (self.numbers != "")
@@ -81,8 +84,8 @@ class ConverterViewController: UIViewController {
         }))
         
         alert.addAction(UIAlertAction(title:"miles to kilometers",style:UIAlertActionStyle.default,handler:{ (alertAction) -> Void in
-            self.inputDisplay.text = "mi"
-            self.outputDisplay.text = "km"
+            self.WhiteInput.text = "mi"
+            self.BlueInput.text = "km"
             self.choice = 3
             self.inputDisplay.text = self.numbers
             if (self.numbers != "")
@@ -93,8 +96,8 @@ class ConverterViewController: UIViewController {
         }))
         
         alert.addAction(UIAlertAction(title:"kilometers to miles",style:UIAlertActionStyle.default,handler:{ (alertAction) -> Void in
-            self.inputDisplay.text = "km"
-            self.outputDisplay.text = "mi"
+            self.WhiteInput.text = "km"
+            self.BlueInput.text = "mi"
             self.choice = 4
             self.inputDisplay.text = self.numbers
             if (self.numbers != "")
@@ -153,7 +156,7 @@ class ConverterViewController: UIViewController {
     
     
     @IBAction func clear(_ sender: UIButton) {
-        if (sender.tag == 11) {
+        if (sender.tag == 10) {
             outputDisplay.text = nil
             inputDisplay.text = nil
             numbers=""
@@ -203,8 +206,8 @@ class ConverterViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.inputDisplay.text="°F"
-        self.outputDisplay.text="°C"
+        self.BlueInput.text="°C"
+        self.WhiteInput.text="°F"
 
         // Do any additional setup after loading the view.
     }
